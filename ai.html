@@ -25,6 +25,14 @@
   .topbar .tel{font-size:13px;color:#9fb0cc}
   iframe{display:block;width:100%;border:0;height:calc(100vh - 49px)}
   .seo{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+  #wrap{position:relative}
+  .tip{position:absolute;left:0;right:0;bottom:0;padding:16px 20px;text-align:center;font-size:13px;
+    color:#cdd9ea;background:rgba(11,21,36,.96);border-top:1px solid rgba(255,255,255,.1)}
+  .tip b{display:block;color:#ffe6a8;font-size:14px;margin-bottom:6px}
+  .tip p{margin-bottom:10px}
+  .btn-open{display:inline-block;padding:9px 22px;border-radius:20px;text-decoration:none;
+    color:#17243a;font-weight:700;background:linear-gradient(180deg,#ffe6a8,#e8b64a)}
+  @media(max-width:760px){iframe{height:calc(100vh - 45px)}.topbar{padding:10px 12px}}
 </style>
 </head>
 <body>
@@ -32,11 +40,30 @@
   <a class="home" href="index.html">← 怡彩YICAI 官网</a>
   <a class="tel" href="tel:17631531113">电话/微信 17631531113</a>
 </div>
-<iframe src="https://39.107.50.144/ai/" title="户外照明选型顾问 AI 智能咨询" allow="clipboard-write"></iframe>
+<div id="wrap">
+<iframe src="https://39.107.50.144/ai/" title="户外照明选型顾问 AI 智能咨询" allow="clipboard-write" id="f"></iframe>
+<div id="tip" class="tip" style="display:none">
+  <b>如长时间空白</b>
+  <p>请点下方按钮在新窗口打开咨询页</p>
+  <a class="btn-open" href="https://39.107.50.144/ai/" target="_blank" rel="noopener">打开 AI 咨询</a>
+</div>
+</div>
 <div class="seo">
   <h1>户外照明 AI 智能咨询</h1>
   <p>本页面提供怡彩YICAI户外照明在线选型咨询，可咨询路灯、庭院灯、景观灯、草坪灯的材质、功率、灯杆高度、供电方式（市电/太阳能）与工程定制问题。AI 回答基于行业通用经验，仅供参考，最终配置以工程师现场确认为准。需要报价、样品或非标定制，请致电 17631531113（电话微信同号）。</p>
   <p><a href="index.html">返回首页</a> · <a href="index.html#products">产品中心</a> · <a href="index.html#faq">常见问题</a> · <a href="index.html#contact">联系我们</a></p>
 </div>
+<script>
+(function(){
+  var shown=false;
+  setTimeout(function(){
+    if(shown) return;
+    var f=document.getElementById('f');
+    // iframe 内容无法探测时，兜底显示按钮（不遮挡，仅底部提示条）
+    document.getElementById('tip').style.display='block';
+  }, 6000);
+  document.getElementById('f').addEventListener('load',function(){ shown=true; document.getElementById('tip').style.display='none'; });
+})();
+</script>
 </body>
 </html>
