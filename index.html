@@ -23,7 +23,11 @@
   a{color:inherit;text-decoration:none}
   .container{max-width:1100px;margin:0 auto;padding:0 20px}
   .en{color:var(--muted);font-size:.82em;letter-spacing:.5px}
-  header{background:#fff;box-shadow:0 1px 8px rgba(0,0,0,.06)}
+  header{background:linear-gradient(135deg,#3d2400,#6b3a00);box-shadow:0 2px 12px rgba(0,0,0,.18);position:relative;z-index:50}
+header .co,header .co b{color:#f3e3cd}
+header nav a{color:#f3e3cd}
+header nav a:hover{color:#ffb84d}
+header nav .en{color:#c9b298}
   .nav{display:flex;flex-direction:column;gap:6px;padding:10px 0}
   .nav-row1{display:flex;align-items:center;justify-content:flex-start;gap:12px}
   .nav-row2{align-self:flex-end}
@@ -34,7 +38,10 @@
   nav ul{display:flex;gap:26px;list-style:none;font-size:15px}
   nav a:hover{color:var(--brand)}
   @media(max-width:760px){nav ul{gap:16px;font-size:13px}.logo img{height:40px}.logo .co{font-size:12px}}
-  .hero{background:linear-gradient(135deg,#3d2400 0%,#8a4a00 55%,#f08300 130%);color:#fff;text-align:center;padding:88px 20px 96px;position:relative;overflow:hidden}
+  .hero-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.btn-line{background:transparent!important;border:2px solid rgba(255,255,255,.7)!important;color:#fff!important}
+.btn-line:hover{background:rgba(255,255,255,.14)!important}
+.hero{background:linear-gradient(135deg,#3d2400 0%,#8a4a00 55%,#f08300 130%);color:#fff;text-align:center;padding:88px 20px 96px;position:relative;overflow:hidden}
   .hero::after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 80% 25%, rgba(255,200,80,.32), transparent 45%)}
   .hero h1{font-size:34px;letter-spacing:2px;margin-bottom:6px;position:relative;z-index:1}
   .hero .h1-en{font-size:17px;opacity:.9;letter-spacing:1px;position:relative;z-index:1}
@@ -147,7 +154,30 @@
   <div class="h1-en">YICAI Outdoor Lighting Manufacturer</div>
   <p>河北盛誉光电科技有限公司 · 成立于2017年 · 支持工程定制 · 中英双语出口服务</p>
   <p class="p-en">Street Lights / Garden Lights / Landscape Lights / Lawn Lights — Factory direct, customization available</p>
-  <a class="btn" href="#products">查看产品 View Products</a>
+  <div class="hero-btns"><a class="btn" href="#products">查看产品 View Products</a><a class="btn btn-line" href="#about">了解我们 About Us</a></div>
+</section>
+
+<section class="section about" id="about">
+  <div class="container">
+    <h2>公司简介</h2>
+    <div class="h2-en">About Us</div>
+    <div class="lang-block">
+      <span class="lang-tag">中文版</span>
+      <p><b>河北盛誉光电科技有限公司</b>（品牌「怡彩 YICAI」，统一社会信用代码 91130605MA08XXHU8W）成立于2017年8月，注册于河北省保定市，专注于户外照明灯具的研发、生产与销售，产品涵盖路灯、庭院灯、景观灯、草坪灯等系列，广泛应用于市政道路、住宅小区、公园景区与商业街区。</p>
+      <p>公司在广东中山古镇、江苏常州邹区设有生产研发基地，总部位于河北保定翠园街723号科技产业园。光源、电器与结构件均选用可靠供应商，出厂前经过老化测试。</p>
+      <ul class="points">
+        <li>工厂直供，支持按工程需求定制规格</li>
+        <li>路灯、庭院灯、景观灯、草坪灯四大系列</li>
+        <li>中英双语服务，支持出口与WhatsApp沟通</li>
+        <li>承接市政、园区、小区等照明工程项目</li>
+      </ul>
+    </div>
+    <div class="lang-block">
+      <span class="lang-tag">English</span>
+      <p><b>Hebei Shengyu Optoelectronic Technology Co., Ltd.</b> (brand <b>YICAI</b>, USCC 91130605MA08XXHU8W), founded in August 2017 in Baoding, Hebei, specializes in the R&amp;D, manufacturing and sales of outdoor lighting products, including street lights, garden lights, landscape lights and lawn lights, widely used on municipal roads, in residential communities, parks, scenic areas and commercial districts.</p>
+      <p>We keep sales &amp; sourcing offices in Guzhen (Zhongshan, Guangdong) and Zouqu (Changzhou, Jiangsu), with the production base in Baoding Science &amp; Technology Industrial Park. Every lamp passes aging tests before delivery. English service available via WhatsApp and email.</p>
+    </div>
+  </div>
 </section>
 
 <section class="section" id="products">
@@ -210,28 +240,7 @@
   </div>
 </section>
 
-<section class="section about" id="about">
-  <div class="container">
-    <h2>公司简介</h2>
-    <div class="h2-en">About Us</div>
-    <div class="lang-block">
-      <span class="lang-tag">中文版</span>
-      <p><b>河北盛誉光电科技有限公司</b>（品牌「怡彩 YICAI」，统一社会信用代码 91130605MA08XXHU8W）成立于2017年8月，注册于河北省保定市，专注于户外照明灯具的研发、生产与销售，产品涵盖路灯、庭院灯、景观灯、草坪灯等系列，广泛应用于市政道路、住宅小区、公园景区与商业街区。</p>
-      <p>公司在广东中山古镇、江苏常州邹区设有生产研发基地，总部位于河北保定翠园街723号科技产业园。光源、电器与结构件均选用可靠供应商，出厂前经过老化测试。</p>
-      <ul class="points">
-        <li>工厂直供，支持按工程需求定制规格</li>
-        <li>路灯、庭院灯、景观灯、草坪灯四大系列</li>
-        <li>中英双语服务，支持出口与WhatsApp沟通</li>
-        <li>承接市政、园区、小区等照明工程项目</li>
-      </ul>
-    </div>
-    <div class="lang-block">
-      <span class="lang-tag">English</span>
-      <p><b>Hebei Shengyu Optoelectronic Technology Co., Ltd.</b> (brand <b>YICAI</b>, USCC 91130605MA08XXHU8W), founded in August 2017 in Baoding, Hebei, specializes in the R&amp;D, manufacturing and sales of outdoor lighting products, including street lights, garden lights, landscape lights and lawn lights, widely used on municipal roads, in residential communities, parks, scenic areas and commercial districts.</p>
-      <p>We keep sales &amp; sourcing offices in Guzhen (Zhongshan, Guangdong) and Zouqu (Changzhou, Jiangsu), with the production base in Baoding Science &amp; Technology Industrial Park. Every lamp passes aging tests before delivery. English service available via WhatsApp and email.</p>
-    </div>
-  </div>
-</section>
+
 
 <section class="contact" id="contact">
   <div class="container">
