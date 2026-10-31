@@ -224,5 +224,27 @@
 {"@type":"Question","name":"质保多久？","acceptedAnswer":{"@type":"Answer","text":"整体质保3年，光源与驱动质保2年。"}},
 {"@type":"Question","name":"可以开发票吗？支持工程招标吗？","acceptedAnswer":{"@type":"Answer","text":"支持开具增值税专用发票和普通发票，可提供营业执照、CMA检测报告等投标资料。"}}]}</script>
 
+<script>
+/* 访问统计上报（不含任何个人身份信息） */
+(function(){
+  try{
+    var q=new URLSearchParams(location.search);
+    var src=(q.get('src')||'').replace(/[^a-zA-Z0-9_-]/g,'').slice(0,32)||'direct';
+    var body=JSON.stringify({src:src,page:location.pathname.split('/').pop()||'index.html'});
+    var done=false, send=function(){
+      if(done) return; done=true;
+      try{
+        if(navigator.sendBeacon){
+          navigator.sendBeacon('https://39.107.50.144/api/beacon',new Blob([body],{type:'application/json'}));
+        }else{
+          fetch('https://39.107.50.144/api/beacon',{method:'POST',body:body,headers:{'Content-Type':'application/json'},keepalive:true}).catch(function(){});
+        }
+      }catch(e){}
+    };
+    if(document.readyState==='complete'){ setTimeout(send,600); }
+    else{ window.addEventListener('load',function(){ setTimeout(send,600); }); }
+  }catch(e){}
+})();
+</script>
 </body>
 </html>

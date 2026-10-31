@@ -373,5 +373,27 @@ details.faq-fold p{padding:12px 0;color:var(--text);line-height:1.8}
 </footer>
 
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "ItemList", "name": "怡彩YICAI户外照明产品", "url": "https://huwailight.com/", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "太阳能庭院灯（大提琴造型）", "url": "https://huwailight.com/cello-solar.html", "image": "https://huwailight.com/img/cello-solar-02.jpg"}, {"@type": "ListItem", "position": 2, "name": "市电庭院灯（大提琴造型）", "url": "https://huwailight.com/cello-ac.html", "image": "https://huwailight.com/img/cello-ac-02.jpg"}, {"@type": "ListItem", "position": 3, "name": "欧式复古双臂庭院灯", "url": "https://huwailight.com/euro-double-arm.html", "image": "https://huwailight.com/img/garden-04.jpg"}, {"@type": "ListItem", "position": 4, "name": "LED庭院灯（3米加工定制）", "url": "https://huwailight.com/garden-custom.html", "image": "https://huwailight.com/img/garden-05.jpg"}, {"@type": "ListItem", "position": 5, "name": "户外LED投光灯（洗墙/照树款）", "url": "https://huwailight.com/led-flood.html", "image": "https://huwailight.com/img/index-09.jpg"}, {"@type": "ListItem", "position": 6, "name": "现代简约景观庭院灯（点阵镂空）", "url": "https://huwailight.com/modern-courtyard.html", "image": "https://huwailight.com/img/index-10.jpg"}, {"@type": "ListItem", "position": 7, "name": "方柱镂空景观灯", "url": "https://huwailight.com/square-landscape.html", "image": "https://huwailight.com/img/index-11.jpg"}, {"@type": "ListItem", "position": 8, "name": "扭柱景观灯，现代艺术造型景观灯", "url": "https://huwailight.com/niuzhu-jgd.html", "image": "https://huwailight.com/img/index-12.jpg"}, {"@type": "ListItem", "position": 9, "name": "户外防水插地式景观射灯", "url": "https://huwailight.com/spike-spotlight.html", "image": "https://huwailight.com/img/index-13.jpg"}, {"@type": "ListItem", "position": 10, "name": "腰鼓灯（树桩灯）", "url": "https://huwailight.com/drum-stump.html", "image": "https://huwailight.com/img/index-14.jpg"}, {"@type": "ListItem", "position": 11, "name": "LED六角太阳能草坪灯，顶部太阳能板免布线", "url": "https://huwailight.com/liujiao-caoping.html", "image": "https://huwailight.com/img/cases-07.jpg"}, {"@type": "ListItem", "position": 12, "name": "方形上下透光草坪灯，现代简约LED草坪灯", "url": "https://huwailight.com/fangzhu-caoping.html", "image": "https://huwailight.com/img/index-16.jpg"}, {"@type": "ListItem", "position": 13, "name": "红色旅游景区专用路灯", "url": "https://huwailight.com/red-street.html", "image": "https://huwailight.com/img/index-19.jpg"}, {"@type": "ListItem", "position": 14, "name": "太阳能路灯（4–10米）", "url": "https://huwailight.com/taiyangneng-ludeng.html", "image": "https://huwailight.com/img/index-20.jpg"}, {"@type": "ListItem", "position": 15, "name": "市政多功能路灯", "url": "https://huwailight.com/duogongneng-ludeng.html", "image": "https://huwailight.com/img/duogongneng-ludeng-01.jpg"}, {"@type": "ListItem", "position": 16, "name": "LED线条灯（楼体轮廓亮化）", "url": "https://huwailight.com/xiantiao-deng.html", "image": "https://huwailight.com/img/index-22.jpg"}, {"@type": "ListItem", "position": 17, "name": "LED洗墙灯，楼体立面泛光亮化", "url": "https://huwailight.com/xiqiang-deng.html", "image": "https://huwailight.com/img/index-23.jpg"}]}</script>
+<script>
+/* 访问统计上报（不含任何个人身份信息） */
+(function(){
+  try{
+    var q=new URLSearchParams(location.search);
+    var src=(q.get('src')||'').replace(/[^a-zA-Z0-9_-]/g,'').slice(0,32)||'direct';
+    var body=JSON.stringify({src:src,page:location.pathname.split('/').pop()||'index.html'});
+    var done=false, send=function(){
+      if(done) return; done=true;
+      try{
+        if(navigator.sendBeacon){
+          navigator.sendBeacon('https://39.107.50.144/api/beacon',new Blob([body],{type:'application/json'}));
+        }else{
+          fetch('https://39.107.50.144/api/beacon',{method:'POST',body:body,headers:{'Content-Type':'application/json'},keepalive:true}).catch(function(){});
+        }
+      }catch(e){}
+    };
+    if(document.readyState==='complete'){ setTimeout(send,600); }
+    else{ window.addEventListener('load',function(){ setTimeout(send,600); }); }
+  }catch(e){}
+})();
+</script>
 </body>
 </html>

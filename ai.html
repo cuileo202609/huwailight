@@ -33,6 +33,19 @@
 <body>
 <div id="wrap">
 <iframe src="https://39.107.50.144/ai/" title="户外光典 AI 智能咨询" allow="clipboard-write" id="f"></iframe>
+<script>
+/* 把站点来源参数透传给 AI 客服 iframe（用于统计渠道：?src=card / booth / book ...） */
+(function(){
+  try{
+    var q=new URLSearchParams(location.search);
+    var src=(q.get('src')||'').replace(/[^a-zA-Z0-9_-]/g,'').slice(0,32)||'site';
+    var f=document.getElementById('f');
+    if(f){ f.src='https://39.107.50.144/ai/?src='+encodeURIComponent(src); }
+    var a=document.querySelector('.btn-open');
+    if(a){ a.href='https://39.107.50.144/ai/?src='+encodeURIComponent(src); }
+  }catch(e){}
+})();
+</script>
 <div id="tip" class="tip" style="display:none">
   <b>如长时间空白</b>
   <p>请点下方按钮在新窗口打开咨询页</p>
@@ -54,6 +67,28 @@
     document.getElementById('tip').style.display='block';
   }, 6000);
   document.getElementById('f').addEventListener('load',function(){ shown=true; document.getElementById('tip').style.display='none'; });
+})();
+</script>
+<script>
+/* 访问统计上报（不含任何个人身份信息） */
+(function(){
+  try{
+    var q=new URLSearchParams(location.search);
+    var src=(q.get('src')||'').replace(/[^a-zA-Z0-9_-]/g,'').slice(0,32)||'direct';
+    var body=JSON.stringify({src:src,page:location.pathname.split('/').pop()||'index.html'});
+    var done=false, send=function(){
+      if(done) return; done=true;
+      try{
+        if(navigator.sendBeacon){
+          navigator.sendBeacon('https://39.107.50.144/api/beacon',new Blob([body],{type:'application/json'}));
+        }else{
+          fetch('https://39.107.50.144/api/beacon',{method:'POST',body:body,headers:{'Content-Type':'application/json'},keepalive:true}).catch(function(){});
+        }
+      }catch(e){}
+    };
+    if(document.readyState==='complete'){ setTimeout(send,600); }
+    else{ window.addEventListener('load',function(){ setTimeout(send,600); }); }
+  }catch(e){}
 })();
 </script>
 </body>

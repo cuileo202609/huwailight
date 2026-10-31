@@ -184,5 +184,27 @@
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Product", "name": "市政多功能路灯", "alternateName": "Municipal Multi-function Smart Pole", "description": "市政多功能路灯（智慧灯杆）：灯杆8/10/12米，照明+视频监控+通信微基站一体化，LED 60W-200W，Q235B热镀锌喷塑，抗风≥12级，支持市政工程图纸深化与投标资料。", "image": "https://huwailight.com/img/duogongneng-ludeng-01.jpg", "sku": "duogongneng-ludeng", "category": "路灯", "brand": {"@type": "Brand", "name": "怡彩 YICAI"}, "manufacturer": {"@type": "Organization", "name": "河北盛誉光电科技有限公司", "url": "https://huwailight.com/", "taxID": "91130605MA08XXHU8W"}}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "市政多功能路灯和普通路灯有什么区别？", "acceptedAnswer": {"@type": "Answer", "text": "普通路灯只承担照明功能；市政多功能路灯在照明基础上预留监控、通信微基站等设备安装位，走线与电源仓一体化设计，一次立杆满足多种市政需求，减少重复立杆和二次开挖。"}}, {"@type": "Question", "name": "监控和微基站是你们配的吗？", "acceptedAnswer": {"@type": "Answer", "text": "灯杆提供标准化安装法兰、供电接口与走线仓，可配合项目方指定的监控设备与运营商基站设备安装。具体设备选型与接入由项目方或运营商确认，我们负责杆体承载、预留与配套基础设计。"}}, {"@type": "Question", "name": "8米、10米、12米怎么选？", "acceptedAnswer": {"@type": "Answer", "text": "按路宽与照度要求反推，一般遵循「灯高≈路宽的一半到三分之二」：次干道12–18米宽选8米杆；主干道20–30米宽选10米杆；快速路或需要更远照射距离选12米杆。"}}, {"@type": "Question", "name": "抗风等级和基础怎么算？", "acceptedAnswer": {"@type": "Answer", "text": "标准杆体抗风≥12级；实际基础需按项目所在地基本风压、土质条件和杆体高度核算，我们可提供基础图纸供设计院或施工方复核。"}}, {"@type": "Question", "name": "能配合市政工程投标吗？", "acceptedAnswer": {"@type": "Answer", "text": "可以。提供营业执照、产品检测报告、材质证明及杆体深化图纸等投标资料，支持按图纸定制杆型、颜色与标识。"}}, {"@type": "Question", "name": "价格为什么跨度这么大？", "acceptedAnswer": {"@type": "Answer", "text": "价格主要取决于灯杆高度与管壁厚度、LED功率、臂数，以及监控点位与微基站法兰等扩展配置。2000元为基础8米单臂照明款，15000元为12米双臂带完整扩展配置款，具体以图纸报价为准。"}}]}</script>
 
+<script>
+/* 访问统计上报（不含任何个人身份信息） */
+(function(){
+  try{
+    var q=new URLSearchParams(location.search);
+    var src=(q.get('src')||'').replace(/[^a-zA-Z0-9_-]/g,'').slice(0,32)||'direct';
+    var body=JSON.stringify({src:src,page:location.pathname.split('/').pop()||'index.html'});
+    var done=false, send=function(){
+      if(done) return; done=true;
+      try{
+        if(navigator.sendBeacon){
+          navigator.sendBeacon('https://39.107.50.144/api/beacon',new Blob([body],{type:'application/json'}));
+        }else{
+          fetch('https://39.107.50.144/api/beacon',{method:'POST',body:body,headers:{'Content-Type':'application/json'},keepalive:true}).catch(function(){});
+        }
+      }catch(e){}
+    };
+    if(document.readyState==='complete'){ setTimeout(send,600); }
+    else{ window.addEventListener('load',function(){ setTimeout(send,600); }); }
+  }catch(e){}
+})();
+</script>
 </body>
 </html>

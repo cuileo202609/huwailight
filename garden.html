@@ -90,5 +90,27 @@ footer .en{color:#c9b18f;font-size:12px;margin-top:4px}
   <div class="en">YICAI Outdoor Lighting · Hebei Shengyu Optoelectronic Technology Co., Ltd. · ICP备案号（预留位置）</div>
 </footer>
 
+<script>
+/* 访问统计上报（不含任何个人身份信息） */
+(function(){
+  try{
+    var q=new URLSearchParams(location.search);
+    var src=(q.get('src')||'').replace(/[^a-zA-Z0-9_-]/g,'').slice(0,32)||'direct';
+    var body=JSON.stringify({src:src,page:location.pathname.split('/').pop()||'index.html'});
+    var done=false, send=function(){
+      if(done) return; done=true;
+      try{
+        if(navigator.sendBeacon){
+          navigator.sendBeacon('https://39.107.50.144/api/beacon',new Blob([body],{type:'application/json'}));
+        }else{
+          fetch('https://39.107.50.144/api/beacon',{method:'POST',body:body,headers:{'Content-Type':'application/json'},keepalive:true}).catch(function(){});
+        }
+      }catch(e){}
+    };
+    if(document.readyState==='complete'){ setTimeout(send,600); }
+    else{ window.addEventListener('load',function(){ setTimeout(send,600); }); }
+  }catch(e){}
+})();
+</script>
 </body>
 </html>

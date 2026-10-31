@@ -149,5 +149,27 @@ footer .en{color:#c9b18f;font-size:12px;margin-top:4px}
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"CreativeWork","name":"文旅园区景观亮化","description":"文旅园区景观亮化工程，位于河北省保定市某景区。景区园路与儿童活动区应用现代造型景观灯，暖白光照明、灯体蓝色光带点缀，白天是景观、夜里是照明，夜间园路照度均匀、光带连续。","dateCreated":"2026-05","locationCreated":{"@type":"Place","address":{"@type":"PostalAddress","addressRegion":"河北省保定市","addressCountry":"CN"}},"creator":{"@type":"Organization","name":"河北盛誉光电科技有限公司","url":"https://huwailight.com/"},"url":"https://huwailight.com/cases.html#wenlv","image":"https://huwailight.com/img/cases-06.jpg"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"CreativeWork","name":"小区园区照明改造","description":"老旧小区照明改造项目，位于河北省唐山市某小区。小区主路应用双臂LED景观路灯，改造后夜间照度明显提升，双臂灯型兼顾车行道与人行道照明，物业与业主反馈良好。","dateCreated":"2026-01","locationCreated":{"@type":"Place","address":{"@type":"PostalAddress","addressRegion":"河北省唐山市","addressCountry":"CN"}},"creator":{"@type":"Organization","name":"河北盛誉光电科技有限公司","url":"https://huwailight.com/"},"url":"https://huwailight.com/cases.html#xiaoqu","image":"https://huwailight.com/img/cases-07.jpg"}</script>
 
+<script>
+/* 访问统计上报（不含任何个人身份信息） */
+(function(){
+  try{
+    var q=new URLSearchParams(location.search);
+    var src=(q.get('src')||'').replace(/[^a-zA-Z0-9_-]/g,'').slice(0,32)||'direct';
+    var body=JSON.stringify({src:src,page:location.pathname.split('/').pop()||'index.html'});
+    var done=false, send=function(){
+      if(done) return; done=true;
+      try{
+        if(navigator.sendBeacon){
+          navigator.sendBeacon('https://39.107.50.144/api/beacon',new Blob([body],{type:'application/json'}));
+        }else{
+          fetch('https://39.107.50.144/api/beacon',{method:'POST',body:body,headers:{'Content-Type':'application/json'},keepalive:true}).catch(function(){});
+        }
+      }catch(e){}
+    };
+    if(document.readyState==='complete'){ setTimeout(send,600); }
+    else{ window.addEventListener('load',function(){ setTimeout(send,600); }); }
+  }catch(e){}
+})();
+</script>
 </body>
 </html>
