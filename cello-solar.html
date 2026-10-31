@@ -261,13 +261,14 @@
     });
     if(!pending)return;
     tries++;
-    if(tries>4)return;
+    if(tries>8)return;
     bad.forEach(function(im){
       if(im.complete&&im.naturalWidth>0)return;
       var src=im.getAttribute('src')||'';
       if(src&&src.indexOf('/img/')===0){
         var base=src.split('?')[0];
-        im.src=base+'?r='+tries+'_'+Date.now();
+        im.src='';               // 先清空，强制浏览器重新发起请求
+        setTimeout(function(){im.src=base;},80);
       }
     });
   }
