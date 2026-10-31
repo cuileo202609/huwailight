@@ -223,5 +223,31 @@
 {"@type":"Question","name":"照度达标吗？","acceptedAnswer":{"@type":"Answer","text":"平均照度≥20lx、均匀度≥0.7，满足景区道路照明标准，可出照度计算书。"}},
 {"@type":"Question","name":"抗风等级多少？","acceptedAnswer":{"@type":"Answer","text":"标准款≥10级，配混凝土基础，大风地区可加强。"}},
 {"@type":"Question","name":"可以开发票吗？支持工程招标吗？","acceptedAnswer":{"@type":"Answer","text":"支持开具增值税专用发票和普通发票，可提供营业执照、CMA检测报告等投标资料。"}}]}</script>
+<script>
+(function(){
+  var tries=0;
+  function fix(){
+    var bad=document.querySelectorAll('img:not([data-retry-ok])');
+    var pending=false;
+    bad.forEach(function(im){
+      if(im.complete&&im.naturalWidth>0){im.setAttribute('data-retry-ok','1');return;}
+      pending=true;
+    });
+    if(!pending)return;
+    tries++;
+    if(tries>4)return;
+    bad.forEach(function(im){
+      if(im.complete&&im.naturalWidth>0)return;
+      var src=im.getAttribute('src')||'';
+      if(src&&src.indexOf('/img/')===0){
+        var base=src.split('?')[0];
+        im.src=base+'?r='+tries+'_'+Date.now();
+      }
+    });
+  }
+  setInterval(fix,6000);
+  window.addEventListener('load',function(){setTimeout(fix,3000)});
+})();
+</script>
 </body>
 </html>

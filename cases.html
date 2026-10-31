@@ -148,5 +148,31 @@ footer .en{color:#c9b18f;font-size:12px;margin-top:4px}
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "CreativeWork", "name": "某市政道路亮化项目", "description": "城市次干道市政道路照明工程，位于河北省。应用市政多功能路灯（智慧灯杆），灯杆高度与臂长按道路断面配置，照明+监控+通信微基站一体化预留，减少路边立杆数量。", "dateCreated": "2025-12", "locationCreated": {"@type": "Place", "address": {"@type": "PostalAddress", "addressRegion": "河北省", "addressCountry": "CN"}}, "creator": {"@type": "Organization", "name": "河北盛誉光电科技有限公司", "url": "https://huwailight.com/"}, "url": "https://huwailight.com/cases.html#road", "image": "https://huwailight.com/cases.html#road"}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "CreativeWork", "name": "文旅园区景观亮化", "description": "文旅园区步道与广场夜间景观照明，位于内蒙古自治区。应用新中式方形庭院灯，色温3000K暖光，灯具造型与园区中式建筑呼应，夜间步道光带连续、氛围统一。", "dateCreated": "2025-06", "locationCreated": {"@type": "Place", "address": {"@type": "PostalAddress", "addressRegion": "内蒙古自治区", "addressCountry": "CN"}}, "creator": {"@type": "Organization", "name": "河北盛誉光电科技有限公司", "url": "https://huwailight.com/"}, "url": "https://huwailight.com/cases.html#wenlv", "image": "https://huwailight.com/cases.html#wenlv"}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "CreativeWork", "name": "小区园区照明改造", "description": "老旧小区照明改造项目，位于内蒙古自治区。原照明设施老化、照度不足，改造采用六角太阳能草坪灯，免布线施工，两天完成全部安装，夜间路面照度明显提升。", "dateCreated": "2025-03", "locationCreated": {"@type": "Place", "address": {"@type": "PostalAddress", "addressRegion": "内蒙古自治区", "addressCountry": "CN"}}, "creator": {"@type": "Organization", "name": "河北盛誉光电科技有限公司", "url": "https://huwailight.com/"}, "url": "https://huwailight.com/cases.html#xiaoqu", "image": "https://huwailight.com/cases.html#xiaoqu"}</script>
+<script>
+(function(){
+  var tries=0;
+  function fix(){
+    var bad=document.querySelectorAll('img:not([data-retry-ok])');
+    var pending=false;
+    bad.forEach(function(im){
+      if(im.complete&&im.naturalWidth>0){im.setAttribute('data-retry-ok','1');return;}
+      pending=true;
+    });
+    if(!pending)return;
+    tries++;
+    if(tries>4)return;
+    bad.forEach(function(im){
+      if(im.complete&&im.naturalWidth>0)return;
+      var src=im.getAttribute('src')||'';
+      if(src&&src.indexOf('/img/')===0){
+        var base=src.split('?')[0];
+        im.src=base+'?r='+tries+'_'+Date.now();
+      }
+    });
+  }
+  setInterval(fix,6000);
+  window.addEventListener('load',function(){setTimeout(fix,3000)});
+})();
+</script>
 </body>
 </html>

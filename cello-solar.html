@@ -249,5 +249,31 @@
 {"@type":"Question","name":"庭院灯定制起订量是多少？","acceptedAnswer":{"@type":"Answer","text":"常规款2盏起订，定制款一般20盏起订，现货7天内发货，定制款15-25天。"}},
 {"@type":"Question","name":"这款灯能不能提供检测报告、CMA/CNAS报告？","acceptedAnswer":{"@type":"Answer","text":"可以。支持提供产品质检报告和IP防护检测报告（含CMA标志），满足招投标项目入库与甲方验收要求。"}},
 {"@type":"Question","name":"庭院灯灯杆抗风等级多少？","acceptedAnswer":{"@type":"Answer","text":"标准款抗风等级10级，大风地区可加厚管壁、加大法兰与地脚螺栓规格，按项目所在地风压定制。"}}]}</script>
+<script>
+(function(){
+  var tries=0;
+  function fix(){
+    var bad=document.querySelectorAll('img:not([data-retry-ok])');
+    var pending=false;
+    bad.forEach(function(im){
+      if(im.complete&&im.naturalWidth>0){im.setAttribute('data-retry-ok','1');return;}
+      pending=true;
+    });
+    if(!pending)return;
+    tries++;
+    if(tries>4)return;
+    bad.forEach(function(im){
+      if(im.complete&&im.naturalWidth>0)return;
+      var src=im.getAttribute('src')||'';
+      if(src&&src.indexOf('/img/')===0){
+        var base=src.split('?')[0];
+        im.src=base+'?r='+tries+'_'+Date.now();
+      }
+    });
+  }
+  setInterval(fix,6000);
+  window.addEventListener('load',function(){setTimeout(fix,3000)});
+})();
+</script>
 </body>
 </html>

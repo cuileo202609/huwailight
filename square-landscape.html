@@ -223,5 +223,31 @@
 {"@type":"Question","name":"有没有频闪和眩光？","acceptedAnswer":{"@type":"Answer","text":"恒流驱动无频闪，透光面板+防眩结构，Ra≥80。"}},
 {"@type":"Question","name":"质保多久？","acceptedAnswer":{"@type":"Answer","text":"寿命≥50000小时，整机质保3年，光源与驱动质保2年。"}},
 {"@type":"Question","name":"可以开发票吗？支持工程招标吗？","acceptedAnswer":{"@type":"Answer","text":"支持开具增值税专用发票和普通发票，可提供营业执照、CMA检测报告等投标资料。"}}]}</script>
+<script>
+(function(){
+  var tries=0;
+  function fix(){
+    var bad=document.querySelectorAll('img:not([data-retry-ok])');
+    var pending=false;
+    bad.forEach(function(im){
+      if(im.complete&&im.naturalWidth>0){im.setAttribute('data-retry-ok','1');return;}
+      pending=true;
+    });
+    if(!pending)return;
+    tries++;
+    if(tries>4)return;
+    bad.forEach(function(im){
+      if(im.complete&&im.naturalWidth>0)return;
+      var src=im.getAttribute('src')||'';
+      if(src&&src.indexOf('/img/')===0){
+        var base=src.split('?')[0];
+        im.src=base+'?r='+tries+'_'+Date.now();
+      }
+    });
+  }
+  setInterval(fix,6000);
+  window.addEventListener('load',function(){setTimeout(fix,3000)});
+})();
+</script>
 </body>
 </html>

@@ -223,5 +223,31 @@
 {"@type":"Question","name":"用什么电压？安全吗？","acceptedAnswer":{"@type":"Answer","text":"可选AC220V或DC12V/24V低压款；人易接触的区域（庭院、儿童活动区）建议选低压款更安全。"}},
 {"@type":"Question","name":"暖白光和七彩怎么选？","acceptedAnswer":{"@type":"Answer","text":"常规绿化照明选暖白/正白；商业街区、节庆氛围可选RGB七彩遥控款。"}},
 {"@type":"Question","name":"可以开发票吗？支持工程招标吗？","acceptedAnswer":{"@type":"Answer","text":"支持开具增值税专用发票和普通发票，可提供CMA检测报告等投标资料。"}}]}</script>
+<script>
+(function(){
+  var tries=0;
+  function fix(){
+    var bad=document.querySelectorAll('img:not([data-retry-ok])');
+    var pending=false;
+    bad.forEach(function(im){
+      if(im.complete&&im.naturalWidth>0){im.setAttribute('data-retry-ok','1');return;}
+      pending=true;
+    });
+    if(!pending)return;
+    tries++;
+    if(tries>4)return;
+    bad.forEach(function(im){
+      if(im.complete&&im.naturalWidth>0)return;
+      var src=im.getAttribute('src')||'';
+      if(src&&src.indexOf('/img/')===0){
+        var base=src.split('?')[0];
+        im.src=base+'?r='+tries+'_'+Date.now();
+      }
+    });
+  }
+  setInterval(fix,6000);
+  window.addEventListener('load',function(){setTimeout(fix,3000)});
+})();
+</script>
 </body>
 </html>
