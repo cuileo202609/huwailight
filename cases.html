@@ -157,6 +157,15 @@ footer .en{color:#c9b18f;font-size:12px;margin-top:4px}
   <p><b>应用产品：</b>莲花景观灯（市电款，高4米）共106套，沿步道单侧交错布置；花瓣造型灯头3000K暖光，花瓣轮廓发光勾勒造型，中心光源下照铺路。</p>
   <p><b>落地效果：</b>亮灯后步道照度均匀、光色温暖，一排「发光莲花」成为景区夜间标志性景观；白天白色灯杆与弯臂造型同竹林相映，游客拍照打卡意愿强，项目验收一次通过。</p>
 </div>
+<div class="case-block" id="yangquan">
+  <h2>小镇街道太阳能庭院灯亮化工程</h2>
+  <div class="cat">小镇实景 · 街道照明亮化　|　完工时间：2026年9月　|　项目地点：山西省阳泉市某小镇</div>
+  <img class="hero" src="img/case-yangquan-1.jpg" alt="山西省阳泉市某小镇街道安装的太阳能庭院灯001红色树杈造型" loading="lazy">
+  <div class="thumbs"><img src="img/case-yangquan-2.jpg" alt="太阳能庭院灯001小镇街巷安装近景" loading="lazy"><img src="img/case-yangquan-3.jpg" alt="太阳能庭院灯001夜晚亮灯效果" loading="lazy"></div>
+  <p><b>项目背景：</b>小镇街巷照明需要兼顾白天景观与夜间功能照明，部分路段开挖布线困难，业主要求灯具免布线、后期零电费、造型醒目有辨识度，并能成为小镇夜间的景观标识。</p>
+  <p><b>应用产品：</b>太阳能庭院灯001（树杈造型，高3.5米）共89套，沿街道单侧布置；双臂LED灯头暖光铺路，杆顶太阳能板白天充电、夜晚光控自动亮灯，红色杆体成为街道一景。</p>
+  <p><b>落地效果：</b>亮灯后街巷照度均匀、无暗区，红色树杈造型白天是醒目的街道装饰、夜晚是温暖的照明节点；太阳能免布线方案省去开挖施工与电费，运行稳定、维护简单。</p>
+</div>
 <div class="cta"><a href="index.html#contact">咨询工程报价与选型方案</a></div>
 </div>
 <footer>
@@ -179,9 +188,9 @@ footer .en{color:#c9b18f;font-size:12px;margin-top:4px}
       if(done) return; done=true;
       try{
         if(navigator.sendBeacon){
-          navigator.sendBeacon('https://39.107.50.144/api/beacon',new Blob([body],{type:'application/json'}));
+          navigator.sendBeacon('/api/beacon',new Blob([body],{type:'application/json'}));
         }else{
-          fetch('https://39.107.50.144/api/beacon',{method:'POST',body:body,headers:{'Content-Type':'application/json'},keepalive:true}).catch(function(){});
+          fetch('/api/beacon',{method:'POST',body:body,headers:{'Content-Type':'application/json'},keepalive:true}).catch(function(){});
         }
       }catch(e){}
     };
